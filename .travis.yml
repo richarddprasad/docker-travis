@@ -7,5 +7,6 @@ services:
 before_install:
     - docker build -t richardprasad/docker-travis -f Dockerfile.dev .
 
+# We know our tests ran successfully if we get a return code of 0
 script:
     - docker run -e CI=true richardprasad/docker-react npm run test
